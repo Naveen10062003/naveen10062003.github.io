@@ -1,0 +1,50 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const skillsData = {
+  "Languages": ["Python", "SQL"],
+  "Frameworks": ["FastAPI", "Flask", "Streamlit"],
+  "Libraries": ["Pandas", "NumPy", "Matplotlib"],
+  "Frontend": ["React", "HTML/CSS", "JavaScript"],
+  "Databases": ["PostgreSQL", "MySQL", "SQLite"],
+  "Cloud": ["AWS EC2", "AWS RDS", "AWS S3", "AWS SSO"],
+  "DevOps": ["Docker", "Podman", "Git", "Jenkins", "CI/CD"],
+  "Technologies": ["Redis", "REST APIs", "Microservices Architecture"]
+};
+
+const Skills = () => {
+  return (
+    <section className="section" id="skills">
+      <motion.h2 
+        className="section-title"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        Technical Skills
+      </motion.h2>
+
+      <div className="skills-grid">
+        {Object.entries(skillsData).map(([category, skills], index) => (
+          <motion.div 
+            key={category}
+            className="glass-card"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+          >
+            <h3 className="skill-category">{category}</h3>
+            <div className="skill-tags">
+              {skills.map(skill => (
+                <span key={skill} className="skill-tag">{skill}</span>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Skills;
