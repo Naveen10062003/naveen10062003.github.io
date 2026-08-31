@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaFilePdf, FaBars, FaTimes } from 'react-icons/fa';
-import resumePdf from '../assets/Naveen_Kumar_Resume.pdf';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -73,7 +72,7 @@ const Navbar = () => {
             Education
           </button>
           <a 
-            href={resumePdf} 
+            href={`${import.meta.env.BASE_URL}Naveen_Kumar_Resume.pdf`} 
             target="_blank" 
             rel="noopener noreferrer" 
             download="Naveen_Kumar_Resume.pdf" 

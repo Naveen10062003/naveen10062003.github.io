@@ -11,7 +11,6 @@ import {
   SiGit 
 } from 'react-icons/si';
 import myImage from '../assets/myimage.jpeg';
-import resumePdf from '../assets/Naveen_Kumar_Resume.pdf';
 
 const techIcons = [
   { name: 'Python', icon: <SiPython size={18} color="#3776AB" />, bg: '#f0f9ff', border: '#bae6fd' },
@@ -95,7 +94,7 @@ const Hero = () => {
             View My Work
           </button>
           <a 
-            href={resumePdf} 
+            href={`${import.meta.env.BASE_URL}Naveen_Kumar_Resume.pdf`} 
             target="_blank" 
             rel="noopener noreferrer" 
             download="Naveen_Kumar_Resume.pdf" 
