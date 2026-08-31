@@ -4,12 +4,13 @@ import { motion } from 'framer-motion';
 const skillsData = {
   "Languages": ["Python", "SQL"],
   "Frameworks": ["FastAPI", "Flask", "Streamlit"],
-  "Libraries": ["Pandas", "NumPy", "Matplotlib"],
-  "Frontend": ["React", "HTML/CSS", "JavaScript"],
-  "Databases": ["PostgreSQL", "MySQL", "SQLite"],
-  "Cloud": ["AWS EC2", "AWS RDS", "AWS S3", "AWS SSO"],
-  "DevOps": ["Docker", "Podman", "Git", "Jenkins", "CI/CD"],
-  "Technologies": ["Redis", "REST APIs", "Microservices Architecture"]
+  "Libraries & Analytics": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Plotly"],
+  "Frontend": ["React (Vite)", "Axios", "HTML/CSS", "JavaScript"],
+  "Databases": ["PostgreSQL", "SQLite", "SQLAlchemy"],
+  "Cloud (AWS)": ["AWS EC2", "AWS RDS", "AWS S3", "AWS SSO"],
+  "DevOps & Tools": ["Docker", "Docker Compose", "Git", "GitHub", "CI/CD"],
+  "Cloud AI & Automation": ["Cloud AI Tools", "AI-assisted Development", "Automation Scripting", "Task Automation"],
+  "Backend & Security": ["REST APIs", "Microservices Architecture", "Redis", "JWT", "RBAC", "MFA", "OpenCV", "OCR"]
 };
 
 const Skills = () => {
@@ -32,7 +33,7 @@ const Skills = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
+            transition={{ delay: index * 0.08 }}
           >
             <h3 className="skill-category">{category}</h3>
             <div className="skill-tags">
@@ -48,3 +49,4 @@ const Skills = () => {
 };
 
 export default Skills;
+

@@ -73,163 +73,179 @@ const csatGaugeData = [
 
 const Dashboard = () => {
   return (
-    <div style={{ background: "#0a0f1c", color: "white", minHeight: "100vh", padding: "20px" }}>
+    <div style={{ background: "#ffffff", color: "var(--text-primary)", minHeight: "100vh", padding: "105px 5% 60px 5%" }}>
       
       {/* HEADER */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "15px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <Link to="/" style={{ color: "var(--accent-color)", display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "25px", borderBottom: "1px solid #e2e8f0", paddingBottom: "20px", flexWrap: "wrap", gap: "15px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap" }}>
+          <Link 
+            to="/" 
+            style={{ 
+              color: "var(--accent-color)", 
+              display: "inline-flex", 
+              alignItems: "center", 
+              gap: "8px", 
+              textDecoration: "none", 
+              background: "#f0f9ff",
+              border: "1px solid #bae6fd",
+              padding: "8px 18px",
+              borderRadius: "20px",
+              fontWeight: 600,
+              fontSize: "0.95rem",
+              boxShadow: "0 2px 8px rgba(2, 132, 199, 0.08)"
+            }}
+          >
             <FaArrowLeft /> Back to Home
           </Link>
-          <h1 style={{ margin: 0, display: "flex", alignItems: "center", gap: "10px", fontSize: "1.5rem" }}>
-            <div style={{ width: "30px", height: "30px", borderRadius: "50%", background: "conic-gradient(#38bdf8, #fb923c, #22c55e)" }}></div>
+          <h1 style={{ margin: 0, display: "flex", alignItems: "center", gap: "10px", fontSize: "1.6rem", color: "#0f172a" }}>
+            <div style={{ width: "24px", height: "24px", borderRadius: "50%", background: "conic-gradient(#0284c7, #fb923c, #16a34a)" }}></div>
             Customer Shopping Data Analysis
           </h1>
         </div>
-        <div>
-          <input type="text" placeholder="Filter insights..." style={{ padding: "8px 15px", borderRadius: "20px", border: "1px solid #333", background: "#1a2235", color: "white", marginRight: "10px" }} />
-          <button className="btn-secondary" style={{ padding: "6px 15px", marginRight: "5px", fontSize: "0.9rem" }}>Export PDF</button>
-          <button className="btn-secondary" style={{ padding: "6px 15px", fontSize: "0.9rem" }}>Refresh Data</button>
+        <div style={{ display: "flex", gap: "10px", alignItems: "center", flexWrap: "wrap" }}>
+          <input type="text" placeholder="Filter insights..." style={{ padding: "8px 16px", borderRadius: "20px", border: "1px solid #cbd5e1", background: "#f8fafc", color: "#0f172a", outline: "none" }} />
+          <button className="btn-secondary" style={{ padding: "8px 18px", fontSize: "0.9rem" }}>Export PDF</button>
+          <button className="btn-secondary" style={{ padding: "8px 18px", fontSize: "0.9rem" }}>Refresh Data</button>
         </div>
       </div>
 
       {/* PROJECT OVERVIEW */}
       <div className="glass-card" style={{ display: "flex", gap: "30px", marginBottom: "30px", padding: "25px", alignItems: "center", flexWrap: "wrap" }}>
-        <img src="/data_analytics_hero.png" alt="Data Analytics Visualization" style={{ width: "300px", height: "auto", borderRadius: "12px", boxShadow: "0 0 20px rgba(56, 189, 248, 0.3)" }} />
+        <img src="/data_analytics_hero.png" alt="Data Analytics Visualization" style={{ width: "300px", height: "auto", borderRadius: "12px", boxShadow: "0 8px 25px rgba(2, 132, 199, 0.15)", border: "1px solid #e2e8f0" }} />
         <div style={{ flex: 1, minWidth: "300px" }}>
           <h2 style={{ color: "var(--accent-color)", marginBottom: "15px", fontSize: "1.8rem" }}>Project Overview</h2>
-          <p style={{ color: "var(--text-secondary)", fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "20px" }}>
+          <p style={{ color: "var(--text-secondary)", fontSize: "1.05rem", lineHeight: "1.7", marginBottom: "20px" }}>
             This comprehensive data analytics pipeline was developed to analyze customer shopping behavior directly from raw transactional logs. 
             By engineering a robust interactive dashboard, I was able to track highly granular real-time insights uncovering specific sales trends, customer demographics, and peak traffic periods. End-to-end processing involved extensive data cleaning and KPI calculations resulting in a fully containerized, deployment-ready analytics product.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
             {["Python", "Pandas", "SQL", "Streamlit", "Plotly", "Matplotlib", "Seaborn", "Docker"].map(tech => (
-              <span key={tech} className="skill-tag" style={{ margin: 0, padding: "4px 12px", background: "rgba(56, 189, 248, 0.1)", borderColor: "#38bdf8" }}>{tech}</span>
+              <span key={tech} className="skill-tag" style={{ margin: 0, padding: "6px 14px" }}>{tech}</span>
             ))}
           </div>
         </div>
       </div>
 
       {/* DASHBOARD GRID */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "20px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "25px" }}>
         
         {/* COLUMN 1 */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <div className="glass-card" style={{ height: "400px", padding: "15px" }}>
-            <h3 style={{ borderBottom: "2px solid #38bdf8", paddingBottom: "5px", marginBottom: "10px", fontSize: "1rem" }}>Total Sales by Category ($)</h3>
+        <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
+          <div className="glass-card" style={{ height: "400px", padding: "20px" }}>
+            <h3 style={{ borderBottom: "2px solid #0284c7", paddingBottom: "8px", marginBottom: "15px", fontSize: "1.05rem", color: "#0f172a" }}>Total Sales by Category ($)</h3>
             <ResponsiveContainer width="100%" height="80%">
               <BarChart data={salesByCategory}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
-                <XAxis dataKey="name" stroke="#9ca3af" tick={{ fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
-                <YAxis stroke="#9ca3af" tick={{ fontSize: 10 }} tickFormatter={(val) => `$${val/1000}k`} />
-                <Tooltip contentStyle={{ background: "#1a2235", border: "none" }} formatter={(value) => `$${value.toLocaleString()}`} />
-                <Bar dataKey="count" fill="#38bdf8" label={{ position: 'top', fill: '#fff', fontSize: 10, formatter: (val) => `${val/1000}k` }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
+                <XAxis dataKey="name" stroke="#64748b" tick={{ fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
+                <YAxis stroke="#64748b" tick={{ fontSize: 10 }} tickFormatter={(val) => `$${val/1000}k`} />
+                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }} formatter={(value) => `$${value.toLocaleString()}`} />
+                <Bar dataKey="count" fill="#0284c7" label={{ position: 'top', fill: '#0f172a', fontSize: 10, formatter: (val) => `${val/1000}k` }} />
               </BarChart>
             </ResponsiveContainer>
           </div>
 
-          <div className="glass-card" style={{ height: "300px", padding: "15px" }}>
-            <h3 style={{ borderBottom: "2px solid #22c55e", paddingBottom: "5px", marginBottom: "10px", fontSize: "1rem" }}>Payment Method Distribution</h3>
+          <div className="glass-card" style={{ height: "320px", padding: "20px" }}>
+            <h3 style={{ borderBottom: "2px solid #16a34a", paddingBottom: "8px", marginBottom: "15px", fontSize: "1.05rem", color: "#0f172a" }}>Payment Method Distribution</h3>
             <ResponsiveContainer width="100%" height="80%">
               <PieChart>
                 <Pie data={paymentMethodsData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} label labelLine={false}>
                   {paymentMethodsData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
                 </Pie>
-                <Tooltip contentStyle={{ background: "#1a2235", border: "none" }} formatter={(value) => `${value}%`} />
-                <Legend iconType="square" wrapperStyle={{ fontSize: "10px" }} />
+                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }} formatter={(value) => `${value}%`} />
+                <Legend iconType="square" wrapperStyle={{ fontSize: "11px", paddingTop: "10px" }} />
               </PieChart>
             </ResponsiveContainer>
           </div>
 
-          <div className="glass-card" style={{ height: "300px", padding: "15px" }}>
-            <h3 style={{ background: "rgba(255,255,255,0.1)", padding: "5px", margin: "-15px -15px 10px -15px", fontSize: "1rem" }}>Cart Abandonment Reasons</h3>
+          <div className="glass-card" style={{ height: "320px", padding: "20px" }}>
+            <h3 style={{ borderBottom: "2px solid #e2e8f0", paddingBottom: "8px", marginBottom: "15px", fontSize: "1.05rem", color: "#0f172a" }}>Cart Abandonment Reasons</h3>
             <ResponsiveContainer width="100%" height="80%">
               <PieChart>
                 <Pie data={abandonmentData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={40} outerRadius={80} label labelLine={false}>
                   {abandonmentData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
                 </Pie>
-                <Tooltip contentStyle={{ background: "#1a2235", border: "none" }} formatter={(value) => `${value}%`} />
-                <Legend iconType="square" wrapperStyle={{ fontSize: "10px" }} />
+                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }} formatter={(value) => `${value}%`} />
+                <Legend iconType="square" wrapperStyle={{ fontSize: "11px", paddingTop: "10px" }} />
               </PieChart>
             </ResponsiveContainer>
           </div>
         </div>
 
         {/* COLUMN 2 */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <div className="glass-card" style={{ height: "300px", padding: "15px" }}>
-            <h3 style={{ background: "rgba(255,255,255,0.1)", padding: "5px", margin: "-15px -15px 10px -15px", fontSize: "1rem", textAlign: "center" }}>Regional Sales Distribution</h3>
+        <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
+          <div className="glass-card" style={{ height: "320px", padding: "20px" }}>
+            <h3 style={{ borderBottom: "2px solid #e2e8f0", paddingBottom: "8px", marginBottom: "15px", fontSize: "1.05rem", color: "#0f172a", textAlign: "center" }}>Regional Sales Distribution</h3>
             <ResponsiveContainer width="100%" height="80%">
               <BarChart layout="vertical" data={salesByRegion}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#333" horizontal={false} />
-                <XAxis type="number" stroke="#9ca3af" tick={{ fontSize: 10 }} tickFormatter={(val) => `$${val/1000}k`} />
-                <YAxis dataKey="name" type="category" stroke="#9ca3af" tick={{ fontSize: 10 }} width={80} />
-                <Tooltip contentStyle={{ background: "#1a2235", border: "none" }} formatter={(value) => `$${value.toLocaleString()}`} />
-                <Bar dataKey="count" fill="#a855f7" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" horizontal={false} />
+                <XAxis type="number" stroke="#64748b" tick={{ fontSize: 10 }} tickFormatter={(val) => `$${val/1000}k`} />
+                <YAxis dataKey="name" type="category" stroke="#64748b" tick={{ fontSize: 10 }} width={80} />
+                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }} formatter={(value) => `$${value.toLocaleString()}`} />
+                <Bar dataKey="count" fill="#9333ea" />
               </BarChart>
             </ResponsiveContainer>
           </div>
 
-          <div className="glass-card" style={{ height: "350px", padding: "15px" }}>
-            <h3 style={{ borderBottom: "2px solid #fb923c", paddingBottom: "5px", marginBottom: "10px", fontSize: "1rem" }}>Peak Sales Periods (Traffic)</h3>
-            <ResponsiveContainer width="100%" height="85%">
+          <div className="glass-card" style={{ height: "360px", padding: "20px" }}>
+            <h3 style={{ borderBottom: "2px solid #ea580c", paddingBottom: "8px", marginBottom: "15px", fontSize: "1.05rem", color: "#0f172a" }}>Peak Sales Periods (Traffic)</h3>
+            <ResponsiveContainer width="100%" height="80%">
               <BarChart data={peakSalesData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
-                <XAxis dataKey="name" stroke="#9ca3af" tick={{ fontSize: 12 }} />
-                <YAxis stroke="#9ca3af" tick={{ fontSize: 10 }} tickFormatter={(val) => `${val/1000}k`} />
-                <Tooltip contentStyle={{ background: "#1a2235", border: "none" }} formatter={(value) => `${value.toLocaleString()} visitors`} />
-                <Legend iconType="square" wrapperStyle={{ fontSize: "10px" }} />
-                <Bar dataKey="Weekday" fill="#38bdf8" label={{ position: 'top', fill: '#fff', fontSize: 10, formatter: (val) => `${val/1000}k` }} />
-                <Bar dataKey="Weekend" fill="#fb923c" label={{ position: 'top', fill: '#fff', fontSize: 10, formatter: (val) => `${val/1000}k` }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
+                <XAxis dataKey="name" stroke="#64748b" tick={{ fontSize: 12 }} />
+                <YAxis stroke="#64748b" tick={{ fontSize: 10 }} tickFormatter={(val) => `${val/1000}k`} />
+                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }} formatter={(value) => `${value.toLocaleString()} visitors`} />
+                <Legend iconType="square" wrapperStyle={{ fontSize: "11px", paddingTop: "10px" }} />
+                <Bar dataKey="Weekday" fill="#0284c7" label={{ position: 'top', fill: '#0f172a', fontSize: 10, formatter: (val) => `${val/1000}k` }} />
+                <Bar dataKey="Weekend" fill="#ea580c" label={{ position: 'top', fill: '#0f172a', fontSize: 10, formatter: (val) => `${val/1000}k` }} />
               </BarChart>
             </ResponsiveContainer>
           </div>
 
-          <div className="glass-card" style={{ height: "250px", padding: "15px", textAlign: "center" }}>
-            <h3 style={{ background: "rgba(255,255,255,0.1)", padding: "5px", margin: "-15px -15px 10px -15px", fontSize: "1rem" }}>Avg Customer Satisfaction (CSAT)</h3>
+          <div className="glass-card" style={{ height: "280px", padding: "20px", textAlign: "center" }}>
+            <h3 style={{ borderBottom: "2px solid #e2e8f0", paddingBottom: "8px", marginBottom: "15px", fontSize: "1.05rem", color: "#0f172a" }}>Avg Customer Satisfaction (CSAT)</h3>
             <ResponsiveContainer width="100%" height="70%">
               <PieChart>
                 <Pie data={csatGaugeData} dataKey="value" cx="50%" cy="80%" startAngle={180} endAngle={0} innerRadius={60} outerRadius={90}>
                   {csatGaugeData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
                 </Pie>
-                <text x="50%" y="80%" textAnchor="middle" dominantBaseline="middle" style={{ fontSize: "1.5rem", fill: "white", fontWeight: "bold" }}>
+                <text x="50%" y="80%" textAnchor="middle" dominantBaseline="middle" style={{ fontSize: "1.5rem", fill: "#0f172a", fontWeight: "bold" }}>
                   4.8 / 5.0
                 </text>
-                <text x="15%" y="85%" style={{ fontSize: "1rem", fill: "#9ca3af" }}>1</text>
-                <text x="85%" y="85%" style={{ fontSize: "1rem", fill: "#9ca3af" }}>5</text>
+                <text x="15%" y="85%" style={{ fontSize: "1rem", fill: "#64748b" }}>1</text>
+                <text x="85%" y="85%" style={{ fontSize: "1rem", fill: "#64748b" }}>5</text>
               </PieChart>
             </ResponsiveContainer>
-            <p style={{ marginTop: "10px", color: "var(--text-secondary)" }}>Derived from 12,450 post-purchase surveys</p>
+            <p style={{ marginTop: "10px", color: "var(--text-secondary)", fontSize: "0.9rem" }}>Derived from 12,450 post-purchase surveys</p>
           </div>
         </div>
 
         {/* COLUMN 3 */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <div className="glass-card" style={{ height: "300px", padding: "15px" }}>
-            <h3 style={{ background: "rgba(255,255,255,0.1)", padding: "5px", margin: "-15px -15px 10px -15px", fontSize: "1rem", textAlign: "center" }}>Customer Demographics (Age)</h3>
+        <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
+          <div className="glass-card" style={{ height: "320px", padding: "20px" }}>
+            <h3 style={{ borderBottom: "2px solid #e2e8f0", paddingBottom: "8px", marginBottom: "15px", fontSize: "1.05rem", color: "#0f172a", textAlign: "center" }}>Customer Demographics (Age)</h3>
             <ResponsiveContainer width="100%" height="80%">
               <PieChart>
                 <Pie data={demographicsData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} label labelLine={false}>
                   {demographicsData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
                 </Pie>
-                <Tooltip contentStyle={{ background: "#1a2235", border: "none" }} formatter={(value) => `${value}%`} />
-                <Legend iconType="square" wrapperStyle={{ fontSize: "10px" }} />
+                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }} formatter={(value) => `${value}%`} />
+                <Legend iconType="square" wrapperStyle={{ fontSize: "11px", paddingTop: "10px" }} />
               </PieChart>
             </ResponsiveContainer>
           </div>
 
-          <div className="glass-card" style={{ height: "350px", padding: "15px" }}>
-            <h3 style={{ background: "rgba(255,255,255,0.1)", padding: "5px", margin: "-15px -15px 10px -15px", fontSize: "1rem", textAlign: "center" }}>Loyalty Tier vs Satisfaction</h3>
-            <ResponsiveContainer width="100%" height="85%">
+          <div className="glass-card" style={{ height: "360px", padding: "20px" }}>
+            <h3 style={{ borderBottom: "2px solid #e2e8f0", paddingBottom: "8px", marginBottom: "15px", fontSize: "1.05rem", color: "#0f172a", textAlign: "center" }}>Loyalty Tier vs Satisfaction</h3>
+            <ResponsiveContainer width="100%" height="80%">
               <BarChart data={loyaltyData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
-                <XAxis dataKey="name" stroke="#9ca3af" tick={{ fontSize: 12 }} />
-                <YAxis stroke="#9ca3af" tick={{ fontSize: 12 }} />
-                <Tooltip contentStyle={{ background: "#1a2235", border: "none" }} formatter={(value) => `${value}%`} />
-                <Legend iconType="square" wrapperStyle={{ fontSize: "10px" }} />
-                <Bar dataKey="LowCSAT" name="Low Satisfaction" fill="#ef4444" />
-                <Bar dataKey="MedCSAT" name="Neutral Satisfaction" fill="#fb923c" />
-                <Bar dataKey="HighCSAT" name="High Satisfaction" fill="#22c55e" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
+                <XAxis dataKey="name" stroke="#64748b" tick={{ fontSize: 12 }} />
+                <YAxis stroke="#64748b" tick={{ fontSize: 12 }} />
+                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }} formatter={(value) => `${value}%`} />
+                <Legend iconType="square" wrapperStyle={{ fontSize: "11px", paddingTop: "10px" }} />
+                <Bar dataKey="LowCSAT" name="Low Satisfaction" fill="#dc2626" />
+                <Bar dataKey="MedCSAT" name="Neutral Satisfaction" fill="#ea580c" />
+                <Bar dataKey="HighCSAT" name="High Satisfaction" fill="#16a34a" />
               </BarChart>
             </ResponsiveContainer>
           </div>

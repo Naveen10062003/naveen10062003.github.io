@@ -14,11 +14,29 @@ const HospitalAnimation = () => {
   }, []);
 
   return (
-    <div style={{ background: "#0a0f1c", color: "white", minHeight: "100vh", padding: "20px 5%", overflowX: "hidden" }}>
+    <div style={{ background: "#ffffff", color: "var(--text-primary)", minHeight: "100vh", padding: "105px 5% 60px 5%", overflowX: "hidden" }}>
       
       {/* HEADER */}
-      <div style={{ padding: "20px 0", borderBottom: "1px solid rgba(255,255,255,0.1)", marginBottom: "30px" }}>
-        <Link to="/" style={{ color: "var(--accent-color)", display: "flex", alignItems: "center", gap: "8px", textDecoration: "none", width: "fit-content", marginBottom: "20px" }}>
+      <div style={{ padding: "10px 0 30px 0", borderBottom: "1px solid #e2e8f0", marginBottom: "30px" }}>
+        <Link 
+          to="/" 
+          style={{ 
+            color: "var(--accent-color)", 
+            display: "inline-flex", 
+            alignItems: "center", 
+            gap: "8px", 
+            textDecoration: "none", 
+            width: "fit-content", 
+            marginBottom: "25px",
+            background: "#f0f9ff",
+            border: "1px solid #bae6fd",
+            padding: "8px 18px",
+            borderRadius: "20px",
+            fontWeight: 600,
+            fontSize: "0.95rem",
+            boxShadow: "0 2px 8px rgba(2, 132, 199, 0.08)"
+          }}
+        >
           <FaArrowLeft /> Back to Home
         </Link>
         
@@ -26,24 +44,24 @@ const HospitalAnimation = () => {
           <img 
             src="/hospital_hero.png" 
             alt="Hospital System" 
-            style={{ width: "100%", maxWidth: "350px", borderRadius: "12px", boxShadow: "0 0 20px rgba(14, 165, 233, 0.3)" }} 
+            style={{ width: "100%", maxWidth: "350px", borderRadius: "12px", boxShadow: "0 8px 25px rgba(14, 165, 233, 0.15)", border: "1px solid #e2e8f0" }} 
           />
           <div style={{ flex: 1, minWidth: "300px" }}>
             <motion.h1 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              style={{ fontSize: "2.5rem", color: "#0ea5e9", marginBottom: "15px" }}
+              style={{ fontSize: "2.5rem", color: "var(--accent-color)", marginBottom: "15px" }}
             >
               Hospital Invoice Generator
             </motion.h1>
-            <p style={{ fontSize: "1.1rem", color: "var(--text-secondary)", lineHeight: "1.6", marginBottom: "20px" }}>
+            <p style={{ fontSize: "1.05rem", color: "var(--text-secondary)", lineHeight: "1.7", marginBottom: "20px" }}>
               A full-stack medical billing solution designed to streamline patient invoicing. 
               The application features dynamic form handling, secure authentication, and a robust PDF generation engine. 
               Built with a focus on data integrity, it utilizes an optimized SQLite backend to ensure persistent and fast access to patient billing records.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
               {["Python", "Flask", "SQLite", "JavaScript", "HTML/CSS", "PDFKit", "Docker"].map(tech => (
-                <span key={tech} className="skill-tag" style={{ margin: 0, padding: "4px 12px", background: "rgba(14, 165, 233, 0.1)", borderColor: "#0ea5e9" }}>{tech}</span>
+                <span key={tech} className="skill-tag" style={{ margin: 0, padding: "6px 14px" }}>{tech}</span>
               ))}
             </div>
           </div>
@@ -60,7 +78,8 @@ const HospitalAnimation = () => {
         alignItems: "center", 
         justifyContent: "center",
         position: "relative",
-        background: "rgba(255,255,255,0.02)"
+        background: "#f8fafc",
+        border: "1px solid #e2e8f0"
       }}>
         
         <AnimatePresence mode="wait">
@@ -73,11 +92,11 @@ const HospitalAnimation = () => {
               style={{ textAlign: "center" }}
             >
               <FaUserMd size={80} color="#0ea5e9" style={{ marginBottom: "20px" }} />
-              <h2>Step 1: Dynamic Patient Intake</h2>
-              <div style={{ marginTop: "20px", background: "rgba(255,255,255,0.05)", padding: "20px", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.1)", width: "300px", textAlign: "left" }}>
-                <p>Name: <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>John Doe</motion.span></p>
-                <p>Service: <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>General Checkup</motion.span></p>
-                <p>Date: <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}>2025-04-10</motion.span></p>
+              <h2 style={{ color: "#0f172a" }}>Step 1: Dynamic Patient Intake</h2>
+              <div style={{ marginTop: "20px", background: "#ffffff", padding: "20px", borderRadius: "12px", border: "1px solid #e2e8f0", width: "300px", textAlign: "left", boxShadow: "0 4px 12px rgba(0,0,0,0.04)" }}>
+                <p style={{ color: "#334155", marginBottom: "6px" }}><strong>Name:</strong> <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>John Doe</motion.span></p>
+                <p style={{ color: "#334155", marginBottom: "6px" }}><strong>Service:</strong> <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>General Checkup</motion.span></p>
+                <p style={{ color: "#334155" }}><strong>Date:</strong> <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}>2025-04-10</motion.span></p>
               </div>
             </motion.div>
           )}
@@ -90,16 +109,16 @@ const HospitalAnimation = () => {
               exit={{ opacity: 0, y: -20 }}
               style={{ textAlign: "center" }}
             >
-              <FaDatabase size={80} color="#22c55e" style={{ marginBottom: "20px" }} />
-              <h2>Step 2: Secure SQLite Storage</h2>
+              <FaDatabase size={80} color="#16a34a" style={{ marginBottom: "20px" }} />
+              <h2 style={{ color: "#0f172a" }}>Step 2: Secure SQLite Storage</h2>
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                 style={{ marginTop: "20px" }}
               >
-                <FaLock size={40} color="#22c55e" />
+                <FaLock size={40} color="#16a34a" />
               </motion.div>
-              <p style={{ color: "#22c55e", marginTop: "10px" }}>Encrypting and Saving Record...</p>
+              <p style={{ color: "#16a34a", marginTop: "10px", fontWeight: 600 }}>Encrypting and Saving Record...</p>
             </motion.div>
           )}
 
@@ -111,15 +130,15 @@ const HospitalAnimation = () => {
               exit={{ opacity: 0, x: 50 }}
               style={{ textAlign: "center" }}
             >
-              <FaFilePdf size={100} color="#ef4444" style={{ marginBottom: "20px" }} />
-              <h2>Step 3: PDF Invoice Engine</h2>
+              <FaFilePdf size={100} color="#dc2626" style={{ marginBottom: "20px" }} />
+              <h2 style={{ color: "#0f172a" }}>Step 3: PDF Invoice Engine</h2>
               <motion.div 
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 2.5 }}
-                style={{ height: "10px", background: "#ef4444", borderRadius: "5px", width: "300px", marginTop: "20px" }}
+                style={{ height: "10px", background: "#dc2626", borderRadius: "5px", width: "300px", marginTop: "20px" }}
               />
-              <p style={{ marginTop: "10px" }}>Generating PDFkit Document...</p>
+              <p style={{ marginTop: "10px", color: "var(--text-secondary)" }}>Generating PDFkit Document...</p>
             </motion.div>
           )}
 
@@ -131,9 +150,9 @@ const HospitalAnimation = () => {
               exit={{ opacity: 0 }}
               style={{ textAlign: "center" }}
             >
-              <FaFileInvoiceDollar size={100} color="#eab308" style={{ marginBottom: "20px" }} />
-              <h2 style={{ color: "#eab308" }}>Invoice Successfully Ready!</h2>
-              <p style={{ marginTop: "10px" }}>Total Amount: $450.00</p>
+              <FaFileInvoiceDollar size={100} color="#d97706" style={{ marginBottom: "20px" }} />
+              <h2 style={{ color: "#d97706" }}>Invoice Successfully Ready!</h2>
+              <p style={{ marginTop: "10px", color: "#334155", fontSize: "1.1rem", fontWeight: 600 }}>Total Amount: $450.00</p>
               <button className="btn-primary" style={{ marginTop: "20px" }}>Download Invoice</button>
             </motion.div>
           )}
@@ -146,7 +165,7 @@ const HospitalAnimation = () => {
               width: "12px", 
               height: "12px", 
               borderRadius: "50%", 
-              background: step === i ? "#0ea5e9" : "rgba(255,255,255,0.2)",
+              background: step === i ? "var(--accent-color)" : "#cbd5e1",
               transition: "all 0.3s ease"
             }} />
           ))}

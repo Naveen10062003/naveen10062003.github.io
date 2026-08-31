@@ -69,33 +69,51 @@ const complianceData = [
 
 const CrewzyAnimation = () => {
   return (
-    <div style={{ background: "#0a0f1c", color: "white", minHeight: "100vh", padding: "20px 5%" }}>
+    <div style={{ background: "#ffffff", color: "var(--text-primary)", minHeight: "100vh", padding: "105px 5% 60px 5%" }}>
       
       {/* HEADER SECTION */}
-      <div style={{ padding: "30px 0", borderBottom: "1px solid rgba(255,255,255,0.1)", marginBottom: "30px" }}>
-        <Link to="/" style={{ color: "var(--accent-color)", display: "flex", alignItems: "center", gap: "8px", textDecoration: "none", width: "fit-content", marginBottom: "20px" }}>
+      <div style={{ padding: "10px 0 30px 0", borderBottom: "1px solid #e2e8f0", marginBottom: "30px" }}>
+        <Link 
+          to="/" 
+          style={{ 
+            color: "var(--accent-color)", 
+            display: "inline-flex", 
+            alignItems: "center", 
+            gap: "8px", 
+            textDecoration: "none", 
+            width: "fit-content", 
+            marginBottom: "25px",
+            background: "#f0f9ff",
+            border: "1px solid #bae6fd",
+            padding: "8px 18px",
+            borderRadius: "20px",
+            fontWeight: 600,
+            fontSize: "0.95rem",
+            boxShadow: "0 2px 8px rgba(2, 132, 199, 0.08)"
+          }}
+        >
           <FaArrowLeft /> Back to Home
         </Link>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "30px", alignItems: "center" }}>
           <img 
             src="/crewzy_hr_hero.png" 
             alt="Crewzy System Architecture" 
-            style={{ width: "100%", maxWidth: "350px", borderRadius: "12px", boxShadow: "0 0 20px rgba(168, 85, 247, 0.3)" }} 
+            style={{ width: "100%", maxWidth: "350px", borderRadius: "12px", boxShadow: "0 8px 25px rgba(168, 85, 247, 0.15)", border: "1px solid #e2e8f0" }} 
           />
           <div style={{ flex: 1, minWidth: "300px" }}>
             <motion.h1 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              style={{ fontSize: "2.5rem", color: "#a855f7", marginBottom: "15px" }}
+              style={{ fontSize: "2.5rem", color: "#9333ea", marginBottom: "15px" }}
             >
               Crewzy HR Management System
             </motion.h1>
-            <p style={{ fontSize: "1.1rem", color: "var(--text-secondary)", lineHeight: "1.6", marginBottom: "20px" }}>
+            <p style={{ fontSize: "1.05rem", color: "var(--text-secondary)", lineHeight: "1.7", marginBottom: "20px" }}>
               A comprehensive, securely scalable HR Management platform built to manage complex company profiles, employee registrations, and continuous compliance tracking inside an isolated Dockerized environment.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
               {["FastAPI", "React", "PostgreSQL", "Redis", "Docker", "AWS Boto3", "Jenkins", "SQLAlchemy", "TailwindCSS"].map(tech => (
-                <span key={tech} className="skill-tag" style={{ margin: 0, padding: "4px 12px", background: "rgba(168, 85, 247, 0.1)", borderColor: "#a855f7" }}>{tech}</span>
+                <span key={tech} className="skill-tag" style={{ margin: 0, padding: "6px 14px" }}>{tech}</span>
               ))}
             </div>
           </div>
@@ -103,21 +121,21 @@ const CrewzyAnimation = () => {
       </div>
 
       {/* CAPABILITIES GRID SECTION */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "25px", paddingBottom: "50px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "25px", paddingBottom: "50px" }}>
         {itemDetails.map((item, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.5, delay: index * 0.08 }}
             className="glass-card"
             style={{ display: "flex", flexDirection: "column", gap: "15px", padding: "25px" }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               {item.icon}
-              <h3 style={{ fontSize: "1.2rem", margin: 0 }}>{item.title}</h3>
+              <h3 style={{ fontSize: "1.2rem", margin: 0, color: "#0f172a" }}>{item.title}</h3>
             </div>
-            <p style={{ color: "var(--text-secondary)", lineHeight: "1.5", fontSize: "0.95rem" }}>
+            <p style={{ color: "var(--text-secondary)", lineHeight: "1.6", fontSize: "0.95rem" }}>
               {item.description}
             </p>
           </motion.div>
@@ -129,34 +147,34 @@ const CrewzyAnimation = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "40px", paddingBottom: "50px" }}
+        style={{ borderTop: "1px solid #e2e8f0", paddingTop: "40px", paddingBottom: "50px" }}
       >
-        <h2 style={{ fontSize: "2rem", color: "#a855f7", marginBottom: "30px", textAlign: "center" }}>Platform Analytics</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "30px" }}>
+        <h2 style={{ fontSize: "2rem", color: "#9333ea", marginBottom: "30px", textAlign: "center" }}>Platform Analytics</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))", gap: "30px" }}>
           
           {/* AUDIT REPORT GRAPH */}
-          <div className="glass-card" style={{ padding: "25px", height: "350px" }}>
-            <h3 style={{ fontSize: "1.2rem", marginBottom: "20px", color: "#38bdf8" }}>Daily System Audit Activity</h3>
+          <div className="glass-card" style={{ padding: "25px", height: "360px" }}>
+            <h3 style={{ fontSize: "1.15rem", marginBottom: "20px", color: "var(--accent-color)" }}>Daily System Audit Activity</h3>
             <ResponsiveContainer width="100%" height="80%">
               <LineChart data={auditData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
-                <XAxis dataKey="time" stroke="#9ca3af" />
-                <YAxis stroke="#9ca3af" />
-                <Tooltip contentStyle={{ background: "#1a2235", border: "none" }} />
-                <Line type="monotone" dataKey="logs" name="Audit Events" stroke="#38bdf8" strokeWidth={3} dot={{ r: 5 }} activeDot={{ r: 8 }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
+                <XAxis dataKey="time" stroke="#64748b" />
+                <YAxis stroke="#64748b" />
+                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }} />
+                <Line type="monotone" dataKey="logs" name="Audit Events" stroke="#0284c7" strokeWidth={3} dot={{ r: 5 }} activeDot={{ r: 8 }} />
               </LineChart>
             </ResponsiveContainer>
           </div>
 
           {/* COMPLIANCE GRAPH */}
-          <div className="glass-card" style={{ padding: "25px", height: "350px" }}>
-            <h3 style={{ fontSize: "1.2rem", marginBottom: "20px", color: "#22c55e", textAlign: "center" }}>Company Compliance Status</h3>
+          <div className="glass-card" style={{ padding: "25px", height: "360px" }}>
+            <h3 style={{ fontSize: "1.15rem", marginBottom: "20px", color: "#16a34a", textAlign: "center" }}>Company Compliance Status</h3>
             <ResponsiveContainer width="100%" height="80%">
               <PieChart>
                 <Pie data={complianceData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={90} label paddingAngle={5}>
                   {complianceData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
                 </Pie>
-                <Tooltip contentStyle={{ background: "#1a2235", border: "none" }} formatter={(value) => `${value}%`} />
+                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }} formatter={(value) => `${value}%`} />
                 <Legend iconType="square" wrapperStyle={{ paddingTop: "20px" }} />
               </PieChart>
             </ResponsiveContainer>

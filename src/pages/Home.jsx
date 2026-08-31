@@ -11,8 +11,6 @@ const Home = () => {
   return (
     <div className="app-container">
       <div className="bg-glow"></div>
-      <Navbar />
-      
       <main>
         <Hero />
         <Education />
@@ -30,19 +28,20 @@ const Home = () => {
           position: 'fixed',
           bottom: '30px',
           right: '30px',
-          background: 'rgba(56, 189, 248, 0.2)',
-          border: '1px solid var(--accent-color)',
+          background: '#ffffff',
+          border: '1.5px solid #bae6fd',
           color: 'var(--accent-color)',
-          width: '50px',
-          height: '50px',
+          width: '48px',
+          height: '48px',
           borderRadius: '50%',
           cursor: 'pointer',
           zIndex: 9999,
-          backdropFilter: 'blur(5px)',
+          boxShadow: '0 4px 15px rgba(2, 132, 199, 0.2)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: '1.5rem'
+          fontSize: '1.4rem',
+          transition: 'all 0.3s ease'
         }}
         title="Back to Top"
       >

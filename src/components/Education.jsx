@@ -5,47 +5,20 @@ import { FaGraduationCap, FaCertificate, FaTools, FaLaptopCode } from 'react-ico
 const Education = () => {
   const educations = [
     {
-      institution: "Yogi Vemana University (YVU)",
-      degree: "B.Tech (Computer Science)",
-      score: "7.54 CGPA",
-      date: "2020 - 2024",
-      highlights: ["Specialized in Software Engineering", "Core Subject Expert: DBMS, OS, Data Structures"]
-    },
-    {
-      institution: "Sri Chaitanya Junior College",
-      degree: "Intermediate (MPC)",
-      score: "8.7 CGPA",
-      date: "2018 - 2020",
-      highlights: ["Focused on Mathematics, Physics, Chemistry"]
-    },
-    {
-      institution: "Vijayavani High School",
-      degree: "10th Standard (SSC)",
-      score: "9.8 CGPA",
-      date: "2018",
-      highlights: ["School Topper in Mathematics"]
-    }
-  ];
-
-  const trainings = [
-    {
-      name: "Python Full-Stack Coaching",
-      institute: "Jspiders Training Institute",
-      focus: "Advanced Python, Django, SQL & Web Technologies",
-      date: "2024"
-    },
-    {
-      name: "Professional Internship during Academics",
-      institute: "Coderview Technologies",
-      focus: "Python Backend Development & Core Logic",
-      date: "2024"
+      institution: "YSR Engineering College, Yogi Vemana University — Kadapa, AP",
+      degree: "B.Tech — Computer Science & Engineering",
+      score: "7.3 / 10 CGPA",
+      date: "June 2020 – April 2024",
+      highlights: ["Core Focus: Software Engineering, Data Structures, DBMS, Operating Systems"]
     }
   ];
 
   const certs = [
-    { name: "Data Analytics Essentials – Cisco", date: "March 2025" },
-    { name: "Microsoft SQL Server – Coursera", date: "May 2024 – June 2024" },
-    { name: "Python Programming – InternPE", date: "May 2023 – Nov 2023" }
+    { name: "AWS Developer Associate: Optimizing AWS — Skillsoft", date: "July 2026" },
+    { name: "Introduction to AWS: AWS Fundamentals and Navigation — Skillsoft", date: "June 2026" },
+    { name: "Data Analytics Essentials — Cisco", date: "March 2025" },
+    { name: "Microsoft SQL Server — Coursera", date: "June 2024" },
+    { name: "Python Programming — InternPE", date: "November 2023" }
   ];
 
   return (
@@ -56,13 +29,13 @@ const Education = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        Academic Journey & Training
+        Education & Certifications
       </motion.h2>
 
       <div style={{ 
         display: "grid", 
-        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", 
-        gap: "2rem",
+        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", 
+        gap: "2.5rem",
         marginTop: "40px"
       }}>
         
@@ -74,55 +47,31 @@ const Education = () => {
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
             <FaGraduationCap color="var(--accent-color)" size={24} />
-            <h3 style={{ margin: 0 }}>Degrees</h3>
+            <h3 style={{ margin: 0, color: "var(--text-primary)" }}>Academic Degree</h3>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             {educations.map((edu, index) => (
-              <div key={index} className="glass-card" style={{ padding: "1.5rem" }}>
-                <div style={{ color: 'var(--accent-color)', fontWeight: "bold", fontSize: "1.1rem" }}>{edu.degree}</div>
-                <div style={{ fontSize: "0.9rem", marginTop: "4px" }}>{edu.institution}</div>
-                <div style={{ color: 'var(--text-secondary)', fontSize: "0.8rem", margin: "8px 0" }}>{edu.date}</div>
-                <div style={{ fontSize: "0.95rem" }}>Score: <strong style={{ color: "#22c55e" }}>{edu.score}</strong></div>
-                <ul style={{ paddingLeft: "1.2rem", marginTop: "10px", fontSize: "0.85rem", color: "var(--text-secondary)" }}>
+              <div key={index} className="glass-card" style={{ padding: "1.8rem" }}>
+                <div style={{ color: 'var(--accent-color)', fontWeight: "bold", fontSize: "1.15rem" }}>{edu.degree}</div>
+                <div style={{ fontSize: "0.95rem", marginTop: "6px", color: "var(--text-primary)" }}>{edu.institution}</div>
+                <div style={{ color: 'var(--text-secondary)', fontSize: "0.85rem", margin: "10px 0" }}>{edu.date}</div>
+                <div style={{ fontSize: "1rem" }}>CGPA: <strong style={{ color: "#16a34a" }}>{edu.score}</strong></div>
+                <ul style={{ paddingLeft: "1.2rem", marginTop: "12px", fontSize: "0.9rem", color: "var(--text-secondary)" }}>
                   {edu.highlights.map((h, i) => <li key={i}>{h}</li>)}
                 </ul>
               </div>
             ))}
-          </div>
-        </motion.div>
 
-        {/* PROFESSIONAL TRAINING */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-            <FaLaptopCode color="var(--accent-color)" size={24} />
-            <h3 style={{ margin: 0 }}>Technical Training</h3>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-            {trainings.map((t, index) => (
-              <div key={index} className="glass-card" style={{ padding: "1.5rem", borderLeft: "4px solid var(--accent-color)" }}>
-                <div style={{ fontWeight: "bold", fontSize: "1.1rem" }}>{t.name}</div>
-                <div style={{ fontSize: "0.9rem", color: 'var(--accent-color)', marginTop: "4px" }}>{t.institute}</div>
-                <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginTop: "10px" }}>
-                  Focus: {t.focus}
-                </p>
-                <div style={{ color: 'var(--text-secondary)', fontSize: "0.8rem", marginTop: "8px" }}>{t.date}</div>
-              </div>
-            ))}
-            
-            {/* ACADEMIC MILESTONES / PROJECTS */}
-            <div style={{ marginTop: "20px" }}>
+            {/* PROJECT MILESTONES */}
+            <div style={{ marginTop: "10px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "15px" }}>
                 <FaTools color="var(--accent-color)" size={20} />
-                <h4 style={{ margin: 0 }}>Project Milestones</h4>
+                <h4 style={{ margin: 0, color: "var(--text-primary)" }}>Key Project Highlights</h4>
               </div>
-              <div className="glass-card" style={{ padding: "1.2rem", background: "rgba(56, 189, 248, 0.05)" }}>
-                <div style={{ fontSize: "0.9rem" }}>• Smart Traffic AI (Computer Vision)</div>
-                <div style={{ fontSize: "0.9rem", marginTop: "5px" }}>• Hospital Billing System (Full Stack)</div>
+              <div className="glass-card" style={{ padding: "1.5rem", background: "#f0f9ff", border: "1px solid #bae6fd" }}>
+                <div style={{ fontSize: "0.95rem", color: "var(--text-primary)", fontWeight: 500 }}>• Crewzy Enterprise HR Platform (FastAPI + React + AWS)</div>
+                <div style={{ fontSize: "0.95rem", marginTop: "8px", color: "var(--text-primary)", fontWeight: 500 }}>• Retail Customer Shopping Data Analytics Pipeline (Streamlit + Docker)</div>
+                <div style={{ fontSize: "0.95rem", marginTop: "8px", color: "var(--text-primary)", fontWeight: 500 }}>• Smart Traffic AI Violation Detection System (OpenCV + OCR)</div>
               </div>
             </div>
           </div>
@@ -133,18 +82,18 @@ const Education = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.2 }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
             <FaCertificate color="var(--accent-color)" size={24} />
-            <h3 style={{ margin: 0 }}>Certifications</h3>
+            <h3 style={{ margin: 0, color: "var(--text-primary)" }}>Professional Certifications</h3>
           </div>
           <div className="timeline">
             {certs.map((cert, index) => (
               <div key={index} className="timeline-item" style={{ paddingLeft: "1.5rem", paddingBottom: "1.5rem" }}>
                 <div className="timeline-dot" style={{ width: "12px", height: "12px", left: "-7px" }}></div>
-                <div className="timeline-date" style={{ fontSize: "0.8rem" }}>{cert.date}</div>
-                <h3 className="timeline-title" style={{ fontSize: "1rem", marginTop: "5px" }}>{cert.name}</h3>
+                <div className="timeline-date" style={{ fontSize: "0.85rem" }}>{cert.date}</div>
+                <h3 className="timeline-title" style={{ fontSize: "1.05rem", marginTop: "5px" }}>{cert.name}</h3>
               </div>
             ))}
           </div>
@@ -156,3 +105,4 @@ const Education = () => {
 };
 
 export default Education;
+

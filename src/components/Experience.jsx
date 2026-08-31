@@ -1,50 +1,41 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaTimes, FaExternalLinkAlt, FaCode, FaChartBar, FaRocket } from 'react-icons/fa';
+import { FaTimes, FaExternalLinkAlt, FaCode, FaRocket, FaBriefcase } from 'react-icons/fa';
 
 const experiences = [
   {
-    role: "Full-Stack Developer",
-    company: "CVT | Crewzy HR Management System",
-    date: "March 2025 - Present",
+    role: "Full Stack Python Developer",
+    company: "Coderview Technologies (Crewzy HR Management System)",
+    department: "Dept: IT-CloudServices | Project: Crewzy HR Management System | Hyderabad, India",
+    date: "March 2025 - April 2026",
     desc: [
-      "Designed and developed a scalable HR Management platform using microservices architecture.",
-      "Built backend services using FastAPI and SQLAlchemy with JWT authentication and RBAC.",
-      "Implemented Multi-Factor Authentication (MFA/OTP) for enhanced security.",
-      "Developed a responsive React (Vite) frontend with Recharts for advanced platform analytics.",
-      "Integrated PostgreSQL (persistence), Redis (caching), and Jenkins (CI/CD).",
-      "Designed cloud-ready architectures with AWS Boto3 integration."
+      "Built a microservices-based HR platform end-to-end for 3+ business units serving 500+ concurrent users.",
+      "Built 2+ REST API modules with FastAPI and SQLAlchemy, cutting development cycle time by 30%.",
+      "Implemented JWT, RBAC, and MFA security, reducing unauthorized access incidents by 95%.",
+      "Optimized PostgreSQL and Redis caching, reducing API response time by 45%.",
+      "Containerized 5+ microservices with Docker, managed containers, and streamlined CI/CD automation.",
+      "Deployed and managed cloud infrastructure on AWS EC2, RDS, and S3, handling full deployment lifecycle.",
+      "Used Cloud AI tools to assist with development, scripting, troubleshooting, and workflow automation."
     ],
-    fullDetails: "At CVT, I lead the core development of the Crewzy HR ecosystem. This platform handles complex workforce management, including employee onboarding, company policy auditing, and compliance reporting. My work involves orchestrating multiple microservices, ensuring data isolation for multi-tenant users, and building high-performance data visualization dashboards using Recharts on the frontend and optimized SQL queries on the backend.",
+    fullDetails: "At Coderview Technologies (Crewzy HR Management System), I led core development of a scalable, enterprise HR ecosystem. This platform handles complex workforce management, employee onboarding, company policy auditing, and compliance reporting. My work involved orchestrating multiple microservices with FastAPI and SQLAlchemy, establishing robust JWT/RBAC/MFA security protocols, optimizing PostgreSQL & Redis caching for fast response times, containerizing services via Docker, and managing cloud deployments on AWS (EC2, RDS, S3).",
     link: "/crewzy-animation",
     linkText: "View Architecture Simulation"
   },
   {
     role: "Data Analyst Intern",
     company: "Coderview Technologies",
+    department: "Hyderabad, Telangana, India",
     date: "August 2024 - February 2025",
     desc: [
-      "Developed a complete analytics pipeline for retail transactional data analysis.",
-      "Built interactive Streamlit dashboards with Plotly for real-time sales insights.",
-      "Performed extensive data cleaning and KPI computation (Total Sales, Basket Size).",
-      "Containerized analytics modules using Docker for portable deployment."
+      "Built an end-to-end ETL pipeline processing 50,000+ records, reducing data processing time by 60%.",
+      "Created a Streamlit + Plotly dashboard displaying real-time KPIs, improving reporting efficiency by 35%.",
+      "Performed data cleaning and feature engineering with Pandas and SQL, improving accuracy by 28%.",
+      "Containerized analytics app with Docker for scalable, portable delivery across environments."
     ],
-    fullDetails: "At Coderview Technologies, I specialized in data-driven decision making. I processed large datasets of customer shopping behavior, applying statistical methods to identify trends. I built a comprehensive dashboard that allowed stakeholders to filter sales by region, category, and time period. The entire system was containerized to ensure it could be deployed across any environment without dependency issues.",
+    fullDetails: "At Coderview Technologies, I developed high-performance analytics pipelines and retail data processing workflows. I engineered ETL jobs over 50,000+ transactional records, computed business-critical KPIs (Total Sales, Average Basket Size, Category Demographics), and built real-time interactive dashboards using Streamlit and Plotly to enable stakeholder decision making.",
     link: "/data-analysis",
     linkText: "Explore Data Dashboard"
-  },
-  {
-    role: "Python Developer Intern",
-    company: "Coderview Technologies",
-    date: "May 2024 - July 2024",
-    desc: [
-      "Focused on core Python backend development and logic implementation.",
-      "Collaborated on building robust RESTful components for internal projects.",
-      "Optimized data retrieval processes and backend performance."
-    ],
-    fullDetails: "During this internship at Coderview Technologies, I focused on the fundamentals of scalable backend logic. I was responsible for writing clean, modular Python code and integrating it with various data sources. I learned industry-standard version control and collaborative development practices, contributing to the migration of legacy scripts into modern FastAPI structures.",
-    link: null
   }
 ];
 
@@ -53,7 +44,7 @@ const Experience = () => {
 
   const openExp = (exp) => {
     setSelectedExp(exp);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    document.body.style.overflow = 'hidden';
   };
 
   const closeExp = () => {
@@ -87,7 +78,7 @@ const Experience = () => {
             <div className="timeline-dot"></div>
             <div className="timeline-date" style={{ color: "var(--accent-color)", fontWeight: "bold" }}>{exp.date}</div>
             <h3 className="timeline-title">{exp.role}</h3>
-            <h4 className="timeline-subtitle" style={{ color: "var(--text-secondary)" }}>{exp.company}</h4>
+            <h4 className="timeline-subtitle" style={{ color: "var(--text-secondary)", fontWeight: 500 }}>{exp.company}</h4>
 
             <ul className="timeline-desc" style={{ marginTop: "15px" }}>
               {exp.desc.slice(0, 3).map((point, i) => (
@@ -95,8 +86,8 @@ const Experience = () => {
               ))}
             </ul>
             
-            <div style={{ marginTop: "20px", display: "flex", gap: "10px", alignItems: "center", color: "var(--accent-color)", fontSize: "0.9rem" }}>
-              <FaRocket /> <span>Tap to view details</span>
+            <div style={{ marginTop: "20px", display: "flex", gap: "10px", alignItems: "center", color: "var(--accent-color)", fontSize: "0.9rem", fontWeight: 600 }}>
+              <FaRocket /> <span>Tap to view full details</span>
             </div>
           </motion.div>
         ))}
@@ -111,8 +102,9 @@ const Experience = () => {
             left: 0,
             width: '100%',
             height: '100%',
-            background: 'rgba(5, 8, 18, 0.95)',
-            backdropFilter: 'blur(15px)',
+            background: 'rgba(15, 23, 42, 0.6)',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -131,8 +123,9 @@ const Experience = () => {
                 overflowY: 'auto',
                 position: 'relative',
                 padding: '40px',
-                border: '1px solid rgba(255,255,255,0.1)',
-                boxShadow: '0 0 50px rgba(0, 242, 254, 0.2)'
+                background: '#ffffff',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
               }}
             >
               {/* CLOSE BUTTON */}
@@ -142,49 +135,47 @@ const Experience = () => {
                   position: 'absolute',
                   top: '20px',
                   right: '20px',
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid var(--accent-color)',
-                  color: 'var(--accent-color)',
-                  width: '40px',
-                  height: '40px',
+                  background: '#f1f5f9',
+                  border: '1px solid #cbd5e1',
+                  color: '#0f172a',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '50%',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.2rem',
-                  transition: 'all 0.3s ease'
+                  fontSize: '1.1rem',
+                  transition: 'all 0.2s ease'
                 }}
                 className="close-hover"
               >
                 <FaTimes />
               </button>
 
-              <div style={{ color: "var(--accent-color)", fontWeight: "bold", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "2px" }}>
+              <div style={{ color: "var(--accent-color)", fontWeight: "bold", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "1.5px" }}>
                 {selectedExp.date}
               </div>
-              <h2 style={{ fontSize: "2.5rem", margin: "10px 0", color: "#fff" }}>{selectedExp.role}</h2>
-              <h3 style={{ fontSize: "1.2rem", color: "var(--text-secondary)", marginBottom: "30px" }}>{selectedExp.company}</h3>
+              <h2 style={{ fontSize: "2.2rem", margin: "10px 0", color: "#0f172a" }}>{selectedExp.role}</h2>
+              <h3 style={{ fontSize: "1.1rem", color: "var(--text-secondary)", marginBottom: "25px" }}>{selectedExp.company}</h3>
               
-              <div style={{ background: "rgba(255,255,255,0.03)", padding: "25px", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.05)", marginBottom: "30px" }}>
-                <p style={{ fontSize: "1.1rem", lineHeight: "1.8", color: "var(--text-primary)" }}>
+              <div style={{ background: "#f8fafc", padding: "20px", borderRadius: "12px", border: "1px solid #e2e8f0", marginBottom: "25px" }}>
+                <p style={{ fontSize: "1.05rem", lineHeight: "1.7", color: "var(--text-primary)" }}>
                   {selectedExp.fullDetails}
                 </p>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px" }}>
-                <div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--accent-color)", marginBottom: "15px" }}>
-                    <FaCode /> <span style={{ fontWeight: "bold" }}>Core Contributions</span>
-                  </div>
-                  <ul style={{ paddingLeft: "1.2rem", color: "var(--text-secondary)" }}>
-                    {selectedExp.desc.map((d, i) => <li key={i} style={{ marginBottom: "10px" }}>{d}</li>)}
-                  </ul>
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--accent-color)", marginBottom: "12px" }}>
+                  <FaCode /> <span style={{ fontWeight: "bold", fontSize: "1.05rem" }}>Key Deliverables & Impact</span>
                 </div>
+                <ul style={{ paddingLeft: "1.2rem", color: "var(--text-secondary)", lineHeight: "1.7" }}>
+                  {selectedExp.desc.map((d, i) => <li key={i} style={{ marginBottom: "8px" }}>{d}</li>)}
+                </ul>
               </div>
 
               {selectedExp.link && (
-                <div style={{ marginTop: "40px", borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "30px", textAlign: "center" }}>
+                <div style={{ marginTop: "30px", borderTop: "1px solid #e2e8f0", paddingTop: "25px", textAlign: "center" }}>
                    <Link to={selectedExp.link} className="btn-primary" style={{ display: "inline-flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
                      <FaExternalLinkAlt /> {selectedExp.linkText}
                    </Link>
@@ -200,3 +191,4 @@ const Experience = () => {
 };
 
 export default Experience;
+

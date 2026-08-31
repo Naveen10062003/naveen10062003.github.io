@@ -11,11 +11,29 @@ const SmartTraffic = () => {
   };
 
   return (
-    <div style={{ background: "#0a0f1c", color: "white", minHeight: "100vh", padding: "20px 5%", overflowX: "hidden" }}>
+    <div style={{ background: "#ffffff", color: "var(--text-primary)", minHeight: "100vh", padding: "105px 5% 60px 5%", overflowX: "hidden" }}>
       
       {/* HEADER */}
-      <div style={{ padding: "20px 0", borderBottom: "1px solid rgba(255,255,255,0.1)", marginBottom: "30px" }}>
-        <Link to="/" style={{ color: "var(--accent-color)", display: "flex", alignItems: "center", gap: "8px", textDecoration: "none", width: "fit-content", marginBottom: "20px" }}>
+      <div style={{ padding: "10px 0 30px 0", borderBottom: "1px solid #e2e8f0", marginBottom: "30px" }}>
+        <Link 
+          to="/" 
+          style={{ 
+            color: "var(--accent-color)", 
+            display: "inline-flex", 
+            alignItems: "center", 
+            gap: "8px", 
+            textDecoration: "none", 
+            width: "fit-content", 
+            marginBottom: "25px",
+            background: "#f0f9ff",
+            border: "1px solid #bae6fd",
+            padding: "8px 18px",
+            borderRadius: "20px",
+            fontWeight: 600,
+            fontSize: "0.95rem",
+            boxShadow: "0 2px 8px rgba(2, 132, 199, 0.08)"
+          }}
+        >
           <FaArrowLeft /> Back to Home
         </Link>
         
@@ -23,7 +41,7 @@ const SmartTraffic = () => {
           <img 
             src="/smart_traffic_hero.png" 
             alt="Smart Traffic Control" 
-            style={{ width: "100%", maxWidth: "350px", borderRadius: "12px", boxShadow: "0 0 20px rgba(56, 189, 248, 0.3)" }} 
+            style={{ width: "100%", maxWidth: "350px", borderRadius: "12px", boxShadow: "0 8px 25px rgba(2, 132, 199, 0.15)", border: "1px solid #e2e8f0" }} 
           />
           <div style={{ flex: 1, minWidth: "300px" }}>
             <motion.h1 
@@ -33,14 +51,14 @@ const SmartTraffic = () => {
             >
               Smart Traffic Enforcement System
             </motion.h1>
-            <p style={{ fontSize: "1.1rem", color: "var(--text-secondary)", lineHeight: "1.6", marginBottom: "20px" }}>
+            <p style={{ fontSize: "1.05rem", color: "var(--text-secondary)", lineHeight: "1.7", marginBottom: "20px" }}>
               An intelligent traffic management solution designed to automate speed limit enforcement and road safety. 
               The system utilizes computer vision and OCR to identify vehicles, calculate real-time speed in dedicated radar zones, 
               and automatically control tollgate barriers to halt violators while allowing law-abiding drivers to proceed seamlessly.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
               {["OpenCV", "OCR", "Python", "Sensors", "React", "Framer Motion", "IoT Integration"].map(tech => (
-                <span key={tech} className="skill-tag" style={{ margin: 0, padding: "4px 12px", background: "rgba(56, 189, 248, 0.1)", borderColor: "var(--accent-color)" }}>{tech}</span>
+                <span key={tech} className="skill-tag" style={{ margin: 0, padding: "6px 14px" }}>{tech}</span>
               ))}
             </div>
           </div>
