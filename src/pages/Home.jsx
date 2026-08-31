@@ -1,11 +1,15 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import Experience from '../components/Experience';
+import BentoGrid from '../components/BentoGrid';
+import ApiPlayground from '../components/ApiPlayground';
 import Projects from '../components/Projects';
+import InteractiveTerminal from '../components/InteractiveTerminal';
 import Skills from '../components/Skills';
+import Experience from '../components/Experience';
 import Education from '../components/Education';
 import Footer from '../components/Footer';
+import QuickConnectDock from '../components/QuickConnectDock';
 
 const Home = () => {
   return (
@@ -13,36 +17,22 @@ const Home = () => {
       <div className="bg-glow"></div>
       <main>
         <Hero />
-        <Education />
-        <Experience />
+        <BentoGrid />
+        <ApiPlayground />
         <Projects />
+        <InteractiveTerminal />
         <Skills />
+        <Experience />
+        <Education />
       </main>
 
       <Footer />
+      <QuickConnectDock />
       
       {/* Floating Back to Top Button */}
       <button 
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        style={{
-          position: 'fixed',
-          bottom: '30px',
-          right: '30px',
-          background: '#ffffff',
-          border: '1.5px solid #bae6fd',
-          color: 'var(--accent-color)',
-          width: '48px',
-          height: '48px',
-          borderRadius: '50%',
-          cursor: 'pointer',
-          zIndex: 9999,
-          boxShadow: '0 4px 15px rgba(2, 132, 199, 0.2)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '1.4rem',
-          transition: 'all 0.3s ease'
-        }}
+        className="back-to-top-btn"
         title="Back to Top"
       >
         ↑
