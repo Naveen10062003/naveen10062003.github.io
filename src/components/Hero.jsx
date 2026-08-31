@@ -39,23 +39,10 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {/* LIVE STATUS & PREFERENCES */}
-        <div className="hero-status-wrapper">
-          <div className="status-badge">
-            <span className="status-pulse-dot"></span>
-            <span>Actively Looking for Opportunities • Full-Time</span>
-          </div>
-          <div className="hero-preference-tags">
-            <span className="pref-tag">
-              <FaMapMarkerAlt color="#0284c7" /> Hyderabad • Bengaluru • Pune • Chennai • Remote
-            </span>
-            <span className="pref-tag">
-              <FaBuilding color="#16a34a" /> WFO / Hybrid / Remote
-            </span>
-            <span className="pref-tag">
-              <FaMoon color="#9333ea" /> Day & Night Shift Flexible
-            </span>
-          </div>
+        {/* LIVE STATUS BADGE */}
+        <div className="status-badge">
+          <span className="status-pulse-dot"></span>
+          <span>Actively Looking for Opportunities • Immediate Joiner</span>
         </div>
 
         <h1 className="hero-title">
@@ -145,6 +132,21 @@ const Hero = () => {
                   <span className="hero-chip-name">{tech.name}</span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* LOCATION & SHIFT PREFERENCES UNDER TECH ECOSYSTEM */}
+          <div className="hero-avatar-preference-tags">
+            <span className="pref-tag">
+              <FaMapMarkerAlt color="#0284c7" /> Hyderabad • Bengaluru • Pune • Chennai • Remote
+            </span>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center', width: '100%' }}>
+              <span className="pref-tag">
+                <FaBuilding color="#16a34a" /> WFO / Hybrid / Remote
+              </span>
+              <span className="pref-tag">
+                <FaMoon color="#9333ea" /> Day & Night Shift Flexible
+              </span>
             </div>
           </div>
         </div>

@@ -1,9 +1,11 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import RecruiterFastTrack from '../components/RecruiterFastTrack';
 import BentoGrid from '../components/BentoGrid';
 import ApiPlayground from '../components/ApiPlayground';
 import Projects from '../components/Projects';
+import GitHubStats from '../components/GitHubStats';
 import InteractiveTerminal from '../components/InteractiveTerminal';
 import Skills from '../components/Skills';
 import Experience from '../components/Experience';
@@ -17,9 +19,11 @@ const Home = () => {
       <div className="bg-glow"></div>
       <main>
         <Hero />
+        <RecruiterFastTrack />
         <BentoGrid />
         <ApiPlayground />
         <Projects />
+        <GitHubStats />
         <InteractiveTerminal />
         <Skills />
         <Experience />

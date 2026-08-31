@@ -49,7 +49,10 @@ const Navbar = () => {
         >
           <div className="nav-logo-badge">NK</div>
           <div className="nav-brand-text">
-            <span className="nav-brand-name">Naveen Kumar</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span className="nav-brand-name">Naveen Kumar</span>
+              <span className="nav-immediate-pill">Immediate</span>
+            </div>
             <span className="nav-brand-title">Full Stack | Data Eng</span>
           </div>
         </Link>
@@ -59,17 +62,20 @@ const Navbar = () => {
           <button onClick={() => scrollToSection('about')} className="nav-link-btn">
             About
           </button>
-          <button onClick={() => scrollToSection('experience')} className="nav-link-btn">
-            Experience
+          <button onClick={() => scrollToSection('architecture')} className="nav-link-btn">
+            Architecture
           </button>
           <button onClick={() => scrollToSection('projects')} className="nav-link-btn">
             Projects
           </button>
+          <button onClick={() => scrollToSection('terminal')} className="nav-link-btn">
+            Terminal
+          </button>
           <button onClick={() => scrollToSection('skills')} className="nav-link-btn">
             Skills
           </button>
-          <button onClick={() => scrollToSection('education')} className="nav-link-btn">
-            Education
+          <button onClick={() => scrollToSection('experience')} className="nav-link-btn">
+            Experience
           </button>
           <a 
             href={`${import.meta.env.BASE_URL}Naveen_Kumar_Resume.pdf`} 
